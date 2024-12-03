@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Starter with Directus, ESLint, Prettier, and Custom Image Blur Effects
 
-## Getting Started
+A starter project to quickly set up a Next.js application with essential features, including Directus integration, code quality tools (ESLint & Prettier), and a custom image component with built-in blurry placeholders.
 
-First, run the development server:
+---
 
+## ✨ Features
+
+- **Next.js**: Modern React framework for building web applications.
+- **Directus Client**: Seamless integration with Directus for managing content.
+- **ESLint**: Linting tool to enforce consistent code style.
+- **Prettier**: Code formatter to ensure uniformity.
+- **Custom Image Component**: Extends Next.js `<Image>` with default blurry placeholders.
+
+---
+
+## 🚀 Getting Started
+
+### 1. **Clone the Repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ducnguyen1002/nextjs-directus-base.git
+cd nextjs-directus-starter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. **Install Dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. **Set Up Environment Variables**
+```bash
+NEXT_PUBLIC_DIRECTUS_URL=https://your-directus-instance.com
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+DIRECTUS_ACCESS_TOKEN=your-directus-access-token
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 4. **Run the Development Server**
+```bash
+npm run dev
+```
+## 🛠 Configuration
 
-## Learn More
+### **Directus Client**
+```bash
+import { createDirectus, graphql } from '@directus/sdk';
 
-To learn more about Next.js, take a look at the following resources:
+export const client = createDirectus('http://directus.example.com').with(graphql());
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📂 Project Structure
+.
+├── app/                # Application routing with the App Router
+│   ├── api/            # API routes
+│   ├── layout.js       # Global layout
+│   └── page.js         # Home page
+├── components/         # Reusable components (e.g., CustomImage)
+├── lib/                # Utilities and API clients (e.g., Directus client)
+├── public/             # Static assets
+├── styles/             # Global and component styles
+├── .eslintrc.json      # ESLint configuration
+├── .prettierrc         # Prettier configuration
+├── next.config.js      # Next.js configuration
+└── package.json        # Dependencies and scripts
