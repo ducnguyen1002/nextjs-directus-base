@@ -48,6 +48,7 @@ export const client = createDirectus('http://directus.example.com').with(graphql
 ```
 
 ## 📂 Project Structure
+```bash
 .
 ├── app/                # Application routing with the App Router
 │   ├── api/            # API routes
@@ -61,3 +62,4 @@ export const client = createDirectus('http://directus.example.com').with(graphql
 ├── .prettierrc         # Prettier configuration
 ├── next.config.js      # Next.js configuration
 └── package.json        # Dependencies and scripts
+```
